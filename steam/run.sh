@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build -q -t naelyn/steam . || {
+docker build -q -t rboyer/steam . || {
 	echo "could not build fresh image" >&2
 	exit 1
 }
@@ -33,10 +33,10 @@ exec docker run --rm -it \
     -v $XAUTH:$XAUTH:rw \
     -v /run/user/1000/pulse:/run/user/1000/pulse \
     -v /var/lib/dbus:/var/lib/dbus \
-	-v /home/steam:/home/naelyn \
+	-v /home/steam:/home/rboyer \
 	-e DISPLAY=$DISPLAY \
     -e "XAUTHORITY=${XAUTH}" \
 	--device /dev/dri \
 	--privileged \
 	--name steam \
-	naelyn/steam
+	rboyer/steam

@@ -1,6 +1,6 @@
 all: docker
 
 docker:
-	docker build -t naelyn/steam .
+	docker build -t rboyer/steam .
 
 .PHONY: docker

@@ -28,17 +28,17 @@ RUN echo "dash dash/sh boolean false" | debconf-set-selections && DEBIAN_FRONTEN
 
 RUN locale-gen en_US.UTF-8 && update-locale
 
-RUN adduser --disabled-password --gecos 'Steam' naelyn
-RUN usermod -aG sudo naelyn
-RUN usermod -aG video naelyn
-RUN usermod -aG adm naelyn
-RUN usermod -aG cdrom naelyn
-RUN usermod -aG dip naelyn
-RUN usermod -aG plugdev naelyn
-RUN echo "naelyn ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/naelyn && \
-	chmod 0440 /etc/sudoers.d/naelyn
+RUN adduser --disabled-password --gecos 'Steam' rboyer
+RUN usermod -aG sudo rboyer
+RUN usermod -aG video rboyer
+RUN usermod -aG adm rboyer
+RUN usermod -aG cdrom rboyer
+RUN usermod -aG dip rboyer
+RUN usermod -aG plugdev rboyer
+RUN echo "rboyer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/rboyer && \
+	chmod 0440 /etc/sudoers.d/rboyer
 
-USER naelyn
+USER rboyer
 CMD ["steam"]
 
 #sh: lspci: command not found
