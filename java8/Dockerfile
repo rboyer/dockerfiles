@@ -10,8 +10,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 && \
 	apt-get install -qq -y oracle-java8-installer oracle-java8-set-default oracle-java8-unlimited-jce-policy && \
 	rm -rf /var/cache/oracle-jdk8-installer
 
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
-
 WORKDIR /data
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
