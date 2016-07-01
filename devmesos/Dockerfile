@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 # FROM ubuntu:xenial
 
-RUN useradd rboyer -u 1000 -s /bin/bash
+RUN useradd rboyer -u 1000 -s /bin/bash -m
 
 ################################################
 # Update the packages.
