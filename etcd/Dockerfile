@@ -37,14 +37,13 @@ RUN mkdir -p /etcd/data && \
     mkdir -p /etcd/config && \
     chown -R etcd:etcd /etcd
 
-# Expose the consul data directory as a volume since there's mutable state in there.
 VOLUME /etcd/data
 
 EXPOSE 2379 2380
 
-# Consul doesn't need root privileges so we run it as the consul user from the
+# Etcd doesn't need root privileges so we run it as the etcd user from the
 # entry point script. The entry point script also uses dumb-init as the top-level
-# process to reap any zombie processes created by Consul sub-processes.
+# process to reap any zombie processes created by Etcd sub-processes.
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 

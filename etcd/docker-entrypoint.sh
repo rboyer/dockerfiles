@@ -6,9 +6,6 @@ set -e
 # wouldn't do either of these functions so we'd leak zombies as well as do
 # unclean termination of all our sub-processes.
 
-CONSUL_DATA_DIR=/etcd/data
-CONSUL_CONFIG_DIR=/etcd/config
-
 # If we are running Etcd, make sure it executes as the proper user.
 if [ "$1" = 'etcd' ]; then
     set -- gosu etcd "$@"
