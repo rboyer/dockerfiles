@@ -34,7 +34,6 @@ RUN \
 
 
 RUN mkdir -p /etcd/data && \
-    mkdir -p /etcd/config && \
     chown -R etcd:etcd /etcd
 
 VOLUME /etcd/data
