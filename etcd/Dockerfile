@@ -46,4 +46,4 @@ EXPOSE 2379 2380
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-CMD ["etcd"]
+CMD ["etcd", "--config-file=/etcd/config.yml" ]
