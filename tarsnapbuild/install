@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+cd /tmp
+
+# Download and verify
+wget https://www.tarsnap.com/download/tarsnap-autoconf-$TARSNAP_VERSION.tgz
+hash="$(sha256sum tarsnap-autoconf-$TARSNAP_VERSION.tgz | cut -d " " -f1)"
+if [ "$hash" != "$TARSNAP_SHA256" ]; then
+    echo "Tarball downloaded from tarsnap.com failed hash check!"
+    exit 1
+fi
+
+# Build tarsnap
+tar zxf tarsnap-autoconf-$TARSNAP_VERSION.tgz
+cd tarsnap-autoconf-$TARSNAP_VERSION
+./configure --prefix=/usr/local
+make all
+
+# generate deb file
+echo "tarsnap: online backups for the truly paranoid" > description-pak
+checkinstall -y --pkgname tarsnap --pkgversion "${TARSNAP_VERSION}"
+
+mkdir -p /output
+cp "tarsnap_${TARSNAP_VERSION}-1_amd64.deb" /output
