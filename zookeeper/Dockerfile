@@ -1,15 +1,15 @@
-FROM ubuntu:trusty
+FROM rboyer/ubuntu-base-java:latest
 
-RUN apt-get update
-RUN apt-get -y install zookeeper
-RUN apt-get -y install zookeeper-bin zookeeperd
+RUN \
+  apt-get update && \
+  apt-get -y install --no-install-recommends \
+  zookeeper zookeeper-bin zookeeperd && \
+  apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY start.sh /bin/start.sh
-
-ENV JAVA_HOME /usr/lib/jvm/default-jvm
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 VOLUME ["/var/lib/zookeeper", "/var/log/zookeeper"]
-
 EXPOSE 2181 2888 3888
 
-CMD [ "/bin/start.sh" ]
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
