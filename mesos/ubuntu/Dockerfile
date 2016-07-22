@@ -1,4 +1,4 @@
-FROM rboyer/ubuntu-base:latest
+FROM rboyer/base:ubuntu
 
 ENV MESOS_VERSION 0.28.2
 # TODO: bsdtar? unzip?

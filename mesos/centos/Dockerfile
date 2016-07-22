@@ -1,4 +1,4 @@
-FROM rboyer/centos-base:latest
+FROM rboyer/base:centos
 
 ENV MESOS_VERSION 0.28.2
 
