@@ -1,4 +1,4 @@
-FROM rboyer/ubuntu-base-java:latest
+FROM rboyer/base-java:ubuntu
 
 ENV MESOS_VERSION 0.28.2
 ENV MARATHON_VERSION 1.1.1
@@ -12,8 +12,6 @@ RUN echo "deb http://repos.mesosphere.io/ubuntu/ $(lsb_release -cs) main" > /etc
   mesos="$(apt-cache madison mesos | grep "\b${MESOS_VERSION}\b" | awk '{print $3}')" \
   marathon="$(apt-cache madison marathon | grep "\b${MARATHON_VERSION}\b" | awk '{print $3}')" && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
-
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
