@@ -8,8 +8,8 @@ ENV DOCKER_BASE_VERSION=0.0.4
 # the rest of this may change over time.
 RUN adduser --system --no-create-home --group app
 
+    # sed -i 's@http://archive.ubuntu.com/ubuntu/@mirror://mirrors.ubuntu.com/mirrors.txt@g' /etc/apt/sources.list && \
 RUN \
-    sed -i 's@http://archive.ubuntu.com/ubuntu/@mirror://mirrors.ubuntu.com/mirrors.txt@g' /etc/apt/sources.list && \
     apt-get update && \
     apt-get install --no-install-recommends -y ca-certificates wget curl unzip && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
