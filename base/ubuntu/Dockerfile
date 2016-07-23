@@ -11,7 +11,7 @@ RUN adduser --system --no-create-home --group app
 RUN \
     sed -i 's@http://archive.ubuntu.com/ubuntu/@mirror://mirrors.ubuntu.com/mirrors.txt@g' /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install --no-install-recommends -y software-properties-common ca-certificates wget curl unzip && \
+    apt-get install --no-install-recommends -y ca-certificates wget curl unzip && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     gpg --keyserver keyserver.ubuntu.com --recv-keys 91A6E7F85D05C65630BEF18951852D87348FFC4C && \
     mkdir -p /tmp/build && \
