@@ -1,6 +1,6 @@
 FROM rboyer/base:ubuntu
 
-ENV DKR_MESOS_VERSION 0.28.2
+ENV DKR_MESOS_VERSION 1.0.0
 # TODO: bsdtar? unzip?
 
   # mesos="$(apt-cache search --names-only '^mesos$' -f | grep "^Version: " | cut -d' ' -f2-)" && \
