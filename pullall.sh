@@ -9,6 +9,7 @@ images=(
     rboyer/mesos:ubuntu
     rboyer/mesos-master:ubuntu
     rboyer/mesos-slave:ubuntu
+    rboyer/mesos-agent:ubuntu
     rboyer/marathon:ubuntu
 
     rboyer/base:centos
