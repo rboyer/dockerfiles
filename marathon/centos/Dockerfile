@@ -1,7 +1,7 @@
 FROM rboyer/base-java:centos
 
 ENV DKR_MESOS_VERSION 0.28.2
-ENV DKR_MARATHON_VERSION 1.1.1
+ENV DKR_MARATHON_VERSION 1.1.2
 
 RUN groupadd marathon && \
     adduser --system --no-create-home -g marathon marathon
