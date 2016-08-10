@@ -7,5 +7,6 @@ set -e
 # unclean termination of all our sub-processes.
 
 chown -R mesos:mesos /var/lib/mesos
+chown -R mesos:mesos /var/log/mesos
 
 exec gosu mesos mesos-master "$@"
