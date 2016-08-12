@@ -40,23 +40,23 @@ RUN apt-get install -y --no-install-recommends zookeeper zookeeper-bin zookeeper
 
 #################################################
 # cleanup
-RUN rm -rf /root/.gnupg
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# RUN rm -rf /root/.gnupg
+# RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN rm -rf /usr/lib/mesos/3rdparty
-RUN rm -rf /usr/include/mesos
-RUN rm -rf /usr/lib/python2.7/site-packages/mesos*
-RUN rm -f /usr/lib/pkgconfig/mesos.pc
-RUN rm -f /usr/bin/mesos*
-RUN rm -rf /etc/mesos /etc/mesos-master /etc/mesos-agent /etc/mesos-slave /etc/marathon
-RUN rm -rf /usr/etc/mesos
-RUN rm -rf /var/lib/mesos /var/log/mesos
-RUN rm -f /etc/init/mesos-master.conf /etc/init/mesos-slave.conf
-RUN rm -f /etc/default/mesos*
-RUN rm -f /etc/init.d/marathon
-RUN rm -f /etc/init/marathon.conf
+# RUN rm -rf /usr/lib/mesos/3rdparty
+# RUN rm -rf /usr/include/mesos
+# RUN rm -rf /usr/lib/python2.7/site-packages/mesos*
+# RUN rm -f /usr/lib/pkgconfig/mesos.pc
+# RUN rm -f /usr/bin/mesos*
+# RUN rm -rf /etc/mesos /etc/mesos-master /etc/mesos-agent /etc/mesos-slave /etc/marathon
+# RUN rm -rf /usr/etc/mesos
+# RUN rm -rf /var/lib/mesos /var/log/mesos
+# RUN rm -f /etc/init/mesos-master.conf /etc/init/mesos-slave.conf
+# RUN rm -f /etc/default/mesos*
+# RUN rm -f /etc/init.d/marathon
+# RUN rm -f /etc/init/marathon.conf
 
-RUN rm -rf /etc/apt /var/lib/dpkg
+# RUN rm -rf /etc/apt /var/lib/dpkg
 
 ######### TODO STILL NEEDED?????????? ###########
 # Default to UTF-8 file.encoding
