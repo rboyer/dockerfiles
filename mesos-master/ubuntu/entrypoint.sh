@@ -6,6 +6,6 @@ set -e
 # wouldn't do either of these functions so we'd leak zombies as well as do
 # unclean termination of all our sub-processes.
 
-chown -R mesos:mesos /mesos
+chown -R mesos:mesos /mesos/{logs,data}
 
 exec gosu mesos mesos-master "$@"
