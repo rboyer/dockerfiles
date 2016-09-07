@@ -1,6 +1,6 @@
 FROM rboyer/base-java:ubuntu
 
-ENV DKR_MESOS_VERSION 1.0.0
+ENV DKR_MESOS_VERSION 1.0.1
 ENV DKR_MARATHON_VERSION 1.1.2
 
 RUN adduser --system --no-create-home --group marathon
