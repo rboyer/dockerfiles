@@ -1,6 +1,6 @@
 FROM rboyer/base-java:centos6
 
-ENV DKR_MESOS_VERSION 0.28.2
+ENV DKR_MESOS_VERSION 1.0.1
 ENV DKR_MARATHON_VERSION 1.1.2
 
 RUN groupadd marathon && \
@@ -12,8 +12,8 @@ COPY RPM-GPG-KEY-mesosphere /etc/pki/rpm-gpg/RPM-GPG-KEY-mesosphere
 
 RUN \
     yum install -y \
-        "$(yum search --showduplicates mesos|grep "\b${DKR_MESOS_VERSION}\b" | cut -d' ' -f1 | sort -r | head -n 1)" \
-        "$(yum search --showduplicates marathon|grep "\b${DKR_MARATHON_VERSION}\b" | cut -d' ' -f1 | sort -r | head -n 1)" && \
+        "$(yum search --showduplicates mesos|grep "\b${DKR_MESOS_VERSION}\b" | cut -d' ' -f1 | sort | tail -n 1)" \
+        "$(yum search --showduplicates marathon|grep "\b${DKR_MARATHON_VERSION}\b" | cut -d' ' -f1 | sort | tail -n 1)" && \
     yum clean all
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
