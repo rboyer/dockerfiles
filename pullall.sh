@@ -18,6 +18,7 @@ images=(
     rboyer/mesos:centos
     rboyer/mesos-master:centos
     rboyer/mesos-slave:centos
+    rboyer/mesos-agent:centos
     rboyer/marathon:centos
 
     rboyer/base:centos6
@@ -26,8 +27,18 @@ images=(
     rboyer/mesos:centos6
     rboyer/mesos-master:centos6
     rboyer/mesos-slave:centos6
+    rboyer/mesos-agent:centos6
     rboyer/marathon:centos6
+
+    rboyer/base:alpine
+    rboyer/base-java:alpine
+    rboyer/zookeeper:alpine
 )
+    # rboyer/mesos:alpine
+    # rboyer/mesos-master:alpine
+    # rboyer/mesos-slave:alpine
+    # rboyer/mesos-agent:alpine
+    # rboyer/marathon:alpine
 # rboyer/steam:latest
 # rboyer/devmesos:latest
 
