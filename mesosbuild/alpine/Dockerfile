@@ -29,6 +29,7 @@ RUN apk add --no-cache --virtual=mesos-build-deps \
     fts \
     fts-dev \
     libsasl \
+    linux-headers \
     openssl-dev \
     subversion-dev \
     subversion-libs \
