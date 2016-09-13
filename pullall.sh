@@ -33,12 +33,12 @@ images=(
     rboyer/base:alpine
     rboyer/base-java:alpine
     rboyer/zookeeper:alpine
+    rboyer/mesos:alpine
+    rboyer/mesos-master:alpine
+    rboyer/mesos-slave:alpine
+    rboyer/mesos-agent:alpine
+    rboyer/marathon:alpine
 )
-    # rboyer/mesos:alpine
-    # rboyer/mesos-master:alpine
-    # rboyer/mesos-slave:alpine
-    # rboyer/mesos-agent:alpine
-    # rboyer/marathon:alpine
 # rboyer/steam:latest
 # rboyer/devmesos:latest
 
