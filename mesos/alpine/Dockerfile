@@ -16,8 +16,5 @@ RUN apk update && apk add --no-cache \
     zlib
 
 RUN \
-    cd /tmp && \
-    wget https://storage.googleapis.com/pkgrepo.rboyer.net/files/mesos-${DKR_MESOS_VERSION}-alpine.tar.gz && \
-    tar zvxf mesos-${DKR_MESOS_VERSION}-alpine.tar.gz && \
     mkdir -p /opt && \
-    mv mesos /opt
+    wget -q -O - https://storage.googleapis.com/pkgrepo.rboyer.net/files/mesos-${DKR_MESOS_VERSION}-alpine.tar.gz | tar -xzf - -C /opt
