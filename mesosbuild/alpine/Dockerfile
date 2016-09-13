@@ -49,5 +49,5 @@ RUN mkdir mesos-${MESOS_VERSION}/build
 WORKDIR /tmp/mesos-${MESOS_VERSION}/build
 RUN ../configure --prefix=/opt/mesos --disable-python --disable-java
 RUN make -j 2
-RUN make check
+# RUN make check
 RUN make install
