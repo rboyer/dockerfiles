@@ -11,6 +11,7 @@ RUN apt-get install -y --no-install-recommends \
         checkinstall
 
 # https://raw.githubusercontent.com/coreos/rkt/v1.10.1/scripts/install-rkt.sh
-COPY install-rkt.sh /bin
+RUN wget 'https://raw.githubusercontent.com/coreos/rkt/v1.14.0/scripts/install-rkt.sh' -O /bin/install-rkt.sh && \
+    chmod +x /bin/install-rkt.sh
 RUN /bin/install-rkt.sh
 
