@@ -24,7 +24,8 @@ RUN \
     apk add --no-cache bash && \
     mkdir -p /opt && \
     wget -q -O - http://downloads.mesosphere.com/marathon/v${DKR_MARATHON_VERSION}/marathon-${DKR_MARATHON_VERSION}.tgz | tar -xzf - -C /opt && \
-    mv /opt/marathon-${DKR_MARATHON_VERSION} /opt/marathon
+    mv /opt/marathon-${DKR_MARATHON_VERSION} /opt/marathon && \
+    cp -a /opt/mesos/lib/libmesos* /usr/local/lib
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
