@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build -q -t rboyer/steam . || {
+docker build -t rboyer/steam . || {
 	echo "could not build fresh image" >&2
 	exit 1
 }
@@ -21,7 +21,6 @@ XAUTH=/tmp/.docker.xauth
 touch $XAUTH
 xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 
-#    -v /etc/machine-id:/etc/machine-id \
 # --rm
 #	-v /dev/shm:/dev/shm \
 #	--device /dev/snd \
@@ -29,12 +28,15 @@ xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 exec docker run --rm -it \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /var/run/dbus:/var/run/dbus \
+   -v /etc/machine-id:/etc/machine-id:ro \
 	-v $XSOCK:$XSOCK:rw \
     -v $XAUTH:$XAUTH:rw \
     -v /run/user/1000/pulse:/run/user/1000/pulse \
     -v /var/lib/dbus:/var/lib/dbus \
 	-v /home/steam:/home/rboyer \
+    -v /tmp \
 	-e DISPLAY=$DISPLAY \
+    -e "PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native" \
     -e "XAUTHORITY=${XAUTH}" \
 	--device /dev/dri \
 	--privileged \
