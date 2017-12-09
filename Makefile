@@ -1,9 +1,5 @@
 all: steam
 
-push:
-	git push origin master
-
+.PHONY: steam
 steam:
 	$(MAKE) -C ./steam
-
-.PHONY: push steam
