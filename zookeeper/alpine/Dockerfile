@@ -1,6 +1,6 @@
 FROM rboyer/base-java:alpine
 
-ENV ZOOKEEPER_VERSION 3.4.6
+ENV ZOOKEEPER_VERSION 3.4.10
 
 RUN \
     apk add --no-cache bash && \
