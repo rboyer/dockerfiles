@@ -1,6 +1,6 @@
 FROM rboyer/base:centos
 
-ENV DKR_MESOS_VERSION 1.0.1
+ENV DKR_MESOS_VERSION 1.2.2
 
 RUN \
     rpm -Uvh http://repos.mesosphere.com/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm && \

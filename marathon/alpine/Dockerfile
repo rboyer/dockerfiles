@@ -1,6 +1,6 @@
 FROM rboyer/base-java:alpine
 
-ENV DKR_MESOS_VERSION 1.0.1
+ENV DKR_MESOS_VERSION 1.2.2
 ENV DKR_MARATHON_VERSION 1.1.2
 
 RUN addgroup marathon && \

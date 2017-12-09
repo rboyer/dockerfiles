@@ -1,6 +1,6 @@
 FROM rboyer/base:centos6
 
-ENV DKR_MESOS_VERSION 1.0.1
+ENV DKR_MESOS_VERSION 1.2.2
 
 # rpm -Uvh http://repos.mesosphere.com/el/6/noarch/RPMS/mesosphere-el-repo-6-3.noarch.rpm && \
 COPY mesosphere.repo /etc/yum.repos.d/mesosphere.repo

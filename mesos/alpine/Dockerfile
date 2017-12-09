@@ -1,6 +1,6 @@
 FROM rboyer/base:alpine
 
-ENV DKR_MESOS_VERSION 1.0.1
+ENV DKR_MESOS_VERSION 1.2.2
 
 RUN apk update && apk add --no-cache \
     tar \
